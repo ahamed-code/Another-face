@@ -1,0 +1,208 @@
+Build me a 3D-interactive, futuristic, cinematic portfolio website for a Video Editor, Graphic Designer, VFX Artist & Short-Film Editor using React, Tailwind, Framer Motion, and Three.js (React Three Fiber).
+
+🎥 MAIN REQUIREMENTS
+1. HERO SECTION (3D + Cinematic)
+
+A stunning 3D animated hero background using Three.js
+(particles, fog, neon glow, or cinematic gradient lighting)
+
+Center text:
+
+Name: "BASHEER AHAMED A"
+
+Subtitle (animated typing):
+“Video Editor • Graphic Designer • VFX Artist • Short Film Editor”
+
+Add 3D floating UI elements or holographic shapes around the hero title
+
+Smooth scroll indicator
+
+2. ABOUT SECTION (Interactive Motion UI)
+
+Modern glass-morphism card
+
+Short bio of me:
+“I am a passionate Video Editor, VFX Artist, Short-film Editor, and Graphic Designer who loves storytelling through visuals.”
+
+Add animated timeline or scroll-fade effects
+
+Add a 3D skill sphere cluster beside the about text:
+
+After Effects
+
+Premiere Pro
+
+DaVinci Resolve
+
+Photoshop
+
+Illustrator
+
+Blender
+
+Cinema 4D (optional)
+
+Each skill appears as a floating 3D ball (sphere) with:
+
+Neon glow on hover
+
+Slight rotation
+
+Tooltip showing the tool name
+
+🎬 3. VIDEO SHOWCASE SECTION
+Short-Form YouTube Reel
+
+A centered video frame with glass card + shadows
+
+Animated “Play” hover glow
+
+Use an iframe placeholder like:
+https://www.youtube.com/embed/VIDEO_ID
+
+Long-Form Video Placeholder
+
+A dedicated div for:
+
+Short films
+
+VFX breakdowns
+
+Before/After editing comparison sliders
+
+Add interactive before–after slider for editing samples
+
+Add scroll-based video fade-in animation
+
+🖼️ 4. PROJECT GALLERY (Cinematic Grid)
+
+Masonry grid or animated staggered cards
+
+Each card includes:
+
+Thumbnail
+
+Title
+
+Category tag (VFX / Editing / Graphics)
+
+Hover: zoom + neon border
+
+On click: modal or lightbox with video playback
+
+Slight parallax animation on scroll
+
+🎮 5. INTERACTIVE ELEMENTS (ALL SECTIONS)
+→ RGB Color Gradient Cursor
+
+A global custom cursor with:
+
+Outer circle (faint glow)
+
+Inner circle following cursor, RGB gradient animation
+
+Ripple effect on click
+
+Cursor reacts to hover on buttons/cards
+
+→ 3D Parallax on Mouse Move
+
+All major sections react slightly to cursor movement:
+
+Text sway
+
+Background movement
+
+Cards lifting up
+
+→ Dynamic Section Transitions
+
+Smooth fade, slide, or 3D rotate transitions using Framer Motion
+
+💬 6. CONTACT SECTION
+
+Clean contact form with:
+
+Name
+
+Email
+
+Message
+
+Animated submit button
+
+EmailJS-ready template section
+
+Add WhatsApp floating button
+(bottom-right with pulse glow)
+
+Add Email icon button
+
+Add social icons (YouTube, Instagram, LinkedIn)
+
+🌀 7. DESIGN STYLE
+The website must look:
+
+Cinematic
+
+Premium / Studio-level
+
+Futuristic (3D + neon gradients)
+
+Inspired by:
+
+Apple Vision Pro UI
+
+Behance Motion Designers
+
+Unreal Engine aesthetic
+
+High-contrast dark theme
+
+Holographic glass cards
+
+Blue/Purple RGB gradients
+
+🧩 8. TECH STACK
+
+Use:
+
+React + Vite
+
+Tailwind CSS
+
+Framer Motion
+
+Three.js + React Three Fiber + Drei
+
+React Icons / Lucide React
+
+🎯 EXPECTED OUTPUT
+
+Generate:
+
+Full folder structure
+
+Component files (Hero, About, Skills3D, Projects, Videos, Contact, Navbar, CursorFX, etc.)
+
+Custom cursor component
+
+React Three Fiber scene setup
+
+Skill spheres with animation logic
+
+EmailJS contact handler
+
+Complete fully working portfolio
+
+Mobile responsive version
+
+Ultra-smooth animations
+
+🔥 If extra clarification needed:
+
+Use placeholders for my videos/images
+
+Default color scheme: Neon Blue + Purple
+
+Focus on smooth animations + 3D interactions
