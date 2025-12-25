@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { OrbitControls } from "@react-three/drei";
-import SkillSpheres from "./canvas/SkillSpheres";
 import { Card } from "@/components/ui/card";
+import pro from "../../public/PROFILE.png";
 
 export default function About() {
   return (
@@ -11,7 +8,9 @@ export default function About() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          {/* Text Content */}
+          {/* -------------------------------------- */}
+          {/* LEFT TEXT CONTENT */}
+          {/* -------------------------------------- */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -21,46 +20,81 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
               About <span className="text-primary">Me</span>
             </h2>
+
             <Card className="glass-card p-8 border-l-4 border-l-primary/50">
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-tech">
-                I am a passionate <span className="text-white font-semibold">Video Editor</span>,{" "}
-                <span className="text-white font-semibold">VFX Artist</span>, and{" "}
-                <span className="text-white font-semibold">Graphic Designer</span> who loves
-                storytelling through visuals. I transform raw footage into cinematic experiences
-                and static designs into living, breathing art.
+                I’m a dedicated <span className="text-white font-semibold">Short-Form Content Creator</span>
+                {" "}and{" "}
+                <span className="text-white font-semibold">Short Film Editor</span> who blends
+                trends with storytelling. I craft fast-paced, impactful edits that connect instantly —
+                from viral reels to emotional visual narratives. My passion lies in turning ideas
+                into engaging cinematic moments that stay with the viewer.
               </p>
-              
+
+              {/* Experience & Projects */}
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <h4 className="text-primary font-display">Experience</h4>
-                  <p className="text-sm text-muted-foreground">5+ Years in Digital Arts</p>
+                  <p className="text-sm text-muted-foreground">2+ Years in VFX & Video Editing</p>
                 </div>
+
                 <div className="space-y-2">
                   <h4 className="text-secondary font-display">Projects</h4>
-                  <p className="text-sm text-muted-foreground">100+ Completed Projects</p>
+                  <p className="text-sm text-muted-foreground">10+ Completed Projects</p>
                 </div>
               </div>
+
+              {/* Glowing Skill Tags */}
+              <div className="mt-10 flex flex-wrap gap-3">
+                {[
+                  { name: "Video Editing", color: "from-pink-500 to-rose-500" },
+                  { name: "VFX Artist", color: "from-purple-500 to-indigo-500" },
+                  { name: "Graphic Designing", color: "from-blue-500 to-cyan-500" },
+                  { name: "Short-form Creator", color: "from-amber-500 to-orange-500" },
+                ].map((skill, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: i * 0.15 }}
+                    className={`
+                      px-4 py-2 rounded-full text-sm font-tech text-white
+                      bg-gradient-to-r ${skill.color}
+                      shadow-[0_0_18px_rgba(255,255,255,0.5)]
+                      animate-pulse
+                    `}
+                  >
+                    {skill.name}
+                  </motion.span>
+                ))}
+              </div>
+
             </Card>
           </motion.div>
 
-          {/* 3D Skills Canvas */}
+          {/* -------------------------------------- */}
+          {/* RIGHT SIDE PHOTO WITH 3D EFFECT */}
+          {/* -------------------------------------- */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="h-[500px] w-full relative"
+            className="w-full flex justify-center"
           >
-             <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10" />
-             <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-               <ambientLight intensity={0.5} />
-               <pointLight position={[10, 10, 10]} intensity={1} />
-               <Suspense fallback={null}>
-                 <SkillSpheres />
-               </Suspense>
-               <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-             </Canvas>
+            <motion.div
+              whileHover={{ rotateY: 8, rotateX: -8, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 150, damping: 12 }}
+              className="p-1 rounded-[30px] bg-gradient-to-br from-primary/40 to-secondary/40 shadow-2xl"
+            >
+              <img
+                src={pro}
+                alt="My Photo"
+                className="rounded-[25px] w-80 md:w-96 object-cover shadow-xl"
+              />
+            </motion.div>
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,108 +1,238 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Play, Maximize2 } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Slider } from "@/components/ui/slider";
 
-export default function VideoShowcase() {
-  const [sliderValue, setSliderValue] = useState([50]);
+/* =======================
+   SOFTWARE (LOGO ORBS)
+======================= */
 
+const software = [
+  {
+    name: "After Effects",
+    gradient: "from-purple-600 to-pink-500",
+    logo: "/ae.svg",
+  },
+  {
+    name: "Premiere Pro",
+    gradient: "from-indigo-600 to-blue-500",
+    logo: "/pr.svg",
+  },
+  {
+    name: "CapCut",
+    gradient: "from-emerald-600 to-teal-500",
+    logo: "/capcut.svg",
+  },
+  {
+    name: "Canva",
+    gradient: "from-cyan-600 to-sky-500",
+    logo: "/canva.svg",
+  },
+];
+
+/* =======================
+   CREATIVE SKILLS
+======================= */
+
+const creativeSkills = [
+  {
+    title: "Storytelling",
+    concepts: ["Narrative Flow", "Emotional Cuts", "Pacing"],
+    tools: ["Premiere Pro", "After Effects"],
+  },
+  {
+    title: "Jump Cuts",
+    concepts: ["Fast Transitions", "Retention Editing", "Short-form Reels"],
+    tools: ["CapCut", "Premiere Pro"],
+  },
+  {
+    title: "Beat Sync Editing",
+    concepts: ["Music Sync", "Rhythm Cuts", "Velocity"],
+    tools: ["After Effects", "CapCut"],
+  },
+  {
+    title: "Motion Graphics",
+    concepts: ["Lower Thirds", "Titles", "Kinetic Text"],
+    tools: ["After Effects", "Canva"],
+  },
+  {
+    title: "Interactivity",
+    concepts: ["Visual Hooks", "Callouts", "Animated Elements"],
+    tools: ["After Effects", "Canva"],
+  },
+];
+
+export default function SkillShowcase() {
   return (
-    <section id="showcase" className="py-20 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="relative py-28 bg-background overflow-hidden">
+      {/* BACKGROUND GLOW */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-secondary/10 blur-3xl" />
+
+      <div className="container mx-auto px-6 relative z-10">
+
+        {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Show<span className="text-secondary">case</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Skills & <span className="text-primary">Tools</span>
           </h2>
-          <p className="text-muted-foreground font-tech">Cinematic Edits & Visual Effects</p>
+          <p className="text-muted-foreground mt-3">
+            Crafting modern cinematic edits with precision
+          </p>
         </motion.div>
 
-        {/* Short Form / Reel */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl rounded-xl -z-10 group-hover:opacity-40 transition-opacity" />
-            <Card className="glass-card overflow-hidden aspect-video relative border-none">
-              {/* Placeholder for YouTube Embed */}
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/30 transition-colors cursor-pointer">
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform">
-                  <Play className="fill-white text-white ml-1" />
-                </div>
-              </div>
-              <img 
-                src="https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?q=80&w=1000&auto=format&fit=crop" 
-                alt="Reel Thumbnail" 
-                className="w-full h-full object-cover"
-              />
-            </Card>
-            <h3 className="mt-4 text-2xl font-display text-white">2025 Showreel</h3>
-            <p className="text-sm text-primary font-tech">Highlighting the best moments</p>
-          </motion.div>
+        {/* SOFTWARE SECTION */}
+<h3 className="text-3xl font-semibold text-white mb-12">
+  Software Expertise
+</h3>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-3xl font-display text-white">Before & After</h3>
-            <p className="text-muted-foreground">
-              Experience the power of color grading and VFX. Slide to see the raw footage vs the final cinematic grade.
-            </p>
+{/* MOBILE: GRID */}
+<div className="grid grid-cols-2 gap-10 mb-20 md:hidden">
+  {software.map((tool) => (
+    <div key={tool.name} className="text-center">
+      <div className="relative mx-auto w-24 h-24 rounded-full">
+        <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${tool.gradient}`} />
+        <img
+          src={tool.logo}
+          alt={tool.name}
+          className="relative z-10 w-full h-full object-cover rounded-full"
+        />
+      </div>
+      <p className="text-white mt-3 text-sm font-semibold">{tool.name}</p>
+    </div>
+  ))}
+</div>
 
-            {/* Comparison Slider */}
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <div className="absolute inset-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1518176258769-f227c798150e?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Before" 
-                  className="w-full h-full object-cover grayscale"
-                />
-                <div className="absolute top-4 left-4 bg-black/50 px-2 py-1 rounded text-xs font-mono text-white">RAW</div>
-              </div>
-              
-              <div 
-                className="absolute inset-0 overflow-hidden border-r-2 border-primary"
-                style={{ width: `${sliderValue[0]}%` }}
+{/* DESKTOP: FLOATING ORBS */}
+<div className="relative h-[420px] mb-32 perspective-[1200px] hidden md:block">
+  {software.map((tool, index) => (
+    <motion.div
+      key={tool.name}
+      className="absolute"
+      animate={{
+        y: [0, -26, 0],
+        rotateZ: [0, 3, -3, 0],
+      }}
+      transition={{
+        duration: 8 + index,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      style={{
+        top: `${18 + index * 16}%`,
+        left: `${16 + index * 18}%`,
+      }}
+    >
+
+              {/* ORB */}
+              <motion.div
+                whileHover={{
+                  scale: 1.3,
+                  rotateX: -12,
+                  rotateY: 12,
+                }}
+                transition={{ type: "spring", stiffness: 120 }}
+                className="relative w-36 h-36 rounded-full flex items-center justify-center transform-gpu"
               >
-                <img 
-                  src="https://images.unsplash.com/photo-1518176258769-f227c798150e?q=80&w=1000&auto=format&fit=crop" 
-                  alt="After" 
-                  className="w-full h-full object-cover"
-                />
-                 <div className="absolute top-4 right-4 bg-primary/80 px-2 py-1 rounded text-xs font-mono text-black font-bold">GRADED</div>
-              </div>
+                {/* OUTER WHITE GLOW */}
+                <div className="absolute -inset-5 rounded-full bg-white/25 blur-3xl" />
 
-              {/* Slider Control */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                 <Slider 
-                   defaultValue={[50]} 
-                   max={100} 
-                   step={1} 
-                   className="w-full h-full opacity-0 cursor-ew-resize absolute z-20" 
-                   onValueChange={setSliderValue}
-                 />
-              </div>
-              
-              {/* Handle Visual */}
-              <div 
-                className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg z-10 pointer-events-none"
-                style={{ left: `calc(${sliderValue[0]}% - 16px)` }}
-              >
-                <Maximize2 className="w-4 h-4 text-black rotate-45" />
-              </div>
-            </div>
-          </motion.div>
+                {/* GRADIENT BODY */}
+                <div
+                  className={`absolute inset-0 rounded-full bg-gradient-to-br ${tool.gradient}
+                  shadow-[0_40px_80px_rgba(0,0,0,0.75)]`}
+                />
+
+                {/* INNER DEPTH */}
+                <div className="absolute inset-1 rounded-full bg-white/10 blur-md" />
+
+                {/* SHINE */}
+                <div className="absolute top-3 left-4 w-24 h-24 rounded-full bg-white/30 blur-2xl opacity-70" />
+
+                {/* ICON (ZOOMED & 3D) */}
+                {/* LOGO CONTAINER (MASKED CIRCLE) */}
+<motion.div
+  className="relative z-10 w-24 h-24 rounded-full overflow-hidden flex items-center justify-center"
+  initial={{ scale: 1.1 }}
+  whileHover={{ scale: 1.35 }}
+  transition={{ type: "spring", stiffness: 120 }}
+  style={{
+    transform: "translateZ(45px)",
+  }}
+>
+  {/* LOGO IMAGE */}
+  <img
+    src={tool.logo}
+    alt={tool.name}
+    className="w-full h-full object-cover"
+    style={{
+      filter: "drop-shadow(0 10px 25px rgba(0,0,0,0.6))",
+    }}
+  />
+
+  {/* INNER DARK VIGNETTE */}
+  <div className="absolute inset-0 rounded-full bg-black/20" />
+
+  {/* GLASS HIGHLIGHT */}
+  <div className="absolute top-2 left-2 w-16 h-16 rounded-full bg-white/25 blur-xl" />
+</motion.div>
+ 
+
+              </motion.div>
+
+              <p className="text-center text-white mt-4 text-sm font-semibold tracking-wide">
+                {tool.name}
+              </p>
+            </motion.div>
+          ))}
         </div>
+
+        {/* CREATIVE SKILLS */}
+        <h3 className="text-3xl font-semibold text-white mb-12">
+          Creative Editing Skills
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {creativeSkills.map((skill, i) => (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative bg-black/40 backdrop-blur-xl
+                border border-white/10 rounded-2xl p-6
+                hover:border-primary/60 transition-all
+                shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+            >
+              <div className="absolute -inset-1 rounded-2xl bg-primary/10 blur-xl opacity-0 hover:opacity-100 transition-opacity" />
+
+              <h4 className="text-xl font-bold text-white mb-3 relative z-10">
+                {skill.title}
+              </h4>
+
+              <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+                {skill.concepts.map((concept) => (
+                  <span
+                    key={concept}
+                    className="text-xs px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30"
+                  >
+                    {concept}
+                  </span>
+                ))}
+              </div>
+
+              <p className="text-sm text-muted-foreground relative z-10">
+                Tools used:
+                <span className="text-white font-medium ml-2">
+                  {skill.tools.join(", ")}
+                </span>
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
