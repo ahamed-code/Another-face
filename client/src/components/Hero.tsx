@@ -24,7 +24,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <h1 className="text-6xl md:text-8xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-primary to-secondary neon-text interactive pointer-events-auto">
+            <h1 className="text-6xl md:text-8xl font-display font-black tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-white via-primary to-secondary neon-text interactive pointer-events-auto">
               BASHEER AHAMED A
             </h1>
           </motion.div>
@@ -54,8 +54,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Decorative Gradients */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent z-10" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-10" />
+      <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-background to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-background to-transparent z-10" />
     </section>
   );
 }

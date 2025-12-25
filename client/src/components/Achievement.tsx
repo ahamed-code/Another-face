@@ -8,7 +8,7 @@ export default function Achievements() {
       className="relative py-28 bg-background overflow-hidden"
     >
       {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 blur-3xl" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-secondary/10 blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* HEADING */}
@@ -41,7 +41,7 @@ export default function Achievements() {
               className="w-full aspect-video object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-black/40" />
 
             <div className="absolute bottom-6 left-6">
               <h3 className="text-xl md:text-2xl font-semibold text-white">

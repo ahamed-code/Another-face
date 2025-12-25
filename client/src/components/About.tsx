@@ -59,7 +59,7 @@ export default function About() {
                     transition={{ duration: 0.6, delay: i * 0.15 }}
                     className={`
                       px-4 py-2 rounded-full text-sm font-tech text-white
-                      bg-gradient-to-r ${skill.color}
+                      bg-linear-to-r ${skill.color}
                       shadow-[0_0_18px_rgba(255,255,255,0.5)]
                       animate-pulse
                     `}
@@ -85,7 +85,7 @@ export default function About() {
             <motion.div
               whileHover={{ rotateY: 8, rotateX: -8, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 150, damping: 12 }}
-              className="p-1 rounded-[30px] bg-gradient-to-br from-primary/40 to-secondary/40 shadow-2xl"
+              className="p-1 rounded-[30px] bg-linear-to-br from-primary/40 to-secondary/40 shadow-2xl"
             >
               <img
                 src={pro}
