@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, PlayCircle, X } from "lucide-react";
-import { Badge } from "./ui/badge";  // Changed from "@/components/ui/badge"
+import { Badge } from "./ui/badge";  
 import { useState } from "react";
 
 /* ================= TYPES ================= */
@@ -22,12 +22,9 @@ type Category = {
   projects: Project[];
 };
 
-/* ================= DATA ================= */
 
 const categories: Category[] = [
   /* ---------- SHORT FILMS ---------- */
-
-  /* ---------- YT / INSTA SHORT-FORM VIDEOS ---------- */
 {
   title: "YT / Insta Short-Form Videos",
   key: "shortform",
