@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, PlayCircle, X } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "./ui/badge";  // Changed from "@/components/ui/badge"
 import { useState } from "react";
 
 /* ================= TYPES ================= */
